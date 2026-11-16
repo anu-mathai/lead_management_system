@@ -1,0 +1,85 @@
+#api call to user creation
+###
+POST  http://127.0.0.1:8000/accounts/register/ 
+Content-Type: application/json
+
+{
+    "username":"testuser",
+    "email":"test12@gmail.com",
+    "password":"test@123",
+    "phone":9856421307
+}
+
+#api call to fetch token
+###
+POST http://127.0.0.1:8000/accounts/token/ 
+Content-Type: application/json
+
+{
+    "username":"testuser",
+    "password":"test@123"
+
+}
+
+#api call to retreieve current user details
+###
+GET http://127.0.0.1:8000/accounts/me/ 
+Accept: application/json
+Authorization: Token b140e8d3f07f150666144b8848520c67bd3a522f
+
+#api call to get leads data
+###
+GET  http://127.0.0.1:8000/leads/
+Accept: application/json
+Authorization: Token b140e8d3f07f150666144b8848520c67bd3a522f
+
+#api call to add leads detail
+###
+POST http://127.0.0.1:8000/leads/
+Content-Type: application/json
+Authorization: Token b140e8d3f07f150666144b8848520c67bd3a522f
+
+{
+    "name":"Anna",
+    "email":"anna05@gmail.com",
+    "phone":97468975312,
+    "company":"ABS Technologies"
+
+}
+
+#api call to retrieve specific leads detail
+###
+GET  http://127.0.0.1:8000/leads/1/
+Accept: application/json
+Authorization: Token b140e8d3f07f150666144b8848520c67bd3a522f
+
+#api call to update lead details
+###
+PUT http://127.0.0.1:8000/leads/1/
+Content-Type: application/json
+Authorization: Token b140e8d3f07f150666144b8848520c67bd3a522f
+
+{
+    "name":"Anugraha",
+    "email":"anu05@gmail.com",
+    "phone":9746852314,
+    "company":"Matrix Technologies"
+
+}
+
+#api call to update only specific detail
+###
+PATCH http://127.0.0.1:8000/leads/1/
+Content-Type: application/json
+Authorization: Token b140e8d3f07f150666144b8848520c67bd3a522f
+
+{
+    "source":"Social Media"
+}
+
+#api call to delete
+###
+DELETE  http://127.0.0.1:8000/leads/2/
+Accept: application/json
+Authorization: Token b140e8d3f07f150666144b8848520c67bd3a522f
+
